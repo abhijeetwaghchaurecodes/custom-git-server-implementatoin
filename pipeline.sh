@@ -122,7 +122,7 @@ else
         echo
     fi
     if [[ -z "${GITHUB_REPO_URL:-}" ]]; then
-        read -rp "  GitHub repo URL (e.g. https://github.com/$GITHUB_USERNAME/sebi-mf-backend.git): " GITHUB_REPO_URL
+        read -rp "  GitHub repo URL (e.g. https://github.com/$GITHUB_USERNAME/custom-git-server-implementatoin.git): " GITHUB_REPO_URL
     fi
 fi
 
