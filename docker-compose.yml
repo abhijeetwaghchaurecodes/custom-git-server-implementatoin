@@ -1,0 +1,36 @@
+# ═══════════════════════════════════════════════════════════════════════════════
+# SEBI MF Backend — Docker Compose
+# ═══════════════════════════════════════════════════════════════════════════════
+#
+# Quick start:
+#   docker compose up --build
+#
+# This builds the 3-stage image and runs it locally.
+# The API will be available at http://localhost:8080
+#
+# ═══════════════════════════════════════════════════════════════════════════════
+
+services:
+  sebi-mf-backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: sebi-mf-backend
+    ports:
+      - "${HOST_PORT:-8080}:8080"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 5s
+      start_period: 10s
+      retries: 3
+    # Resource limits for production-like behavior
+    deploy:
+      resources:
+        limits:
+          memory: 128M
+          cpus: "0.5"
+        reservations:
+          memory: 64M
+          cpus: "0.25"

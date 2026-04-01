@@ -1,0 +1,7 @@
+go 1.21
+
+use (
+	./project1-mf-backend
+	./project2-mf-implementations
+	./service-injector
+)

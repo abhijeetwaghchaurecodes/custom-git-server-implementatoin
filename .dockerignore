@@ -1,0 +1,41 @@
+# Git
+.git
+.gitignore
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Build artifacts
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Test & temp
+*.test
+*.out
+*.log
+tmp/
+dist/
+
+# SQLite databases (injector creates these at runtime)
+*.db
+*.db-journal
+*.db-wal
+
+# Docker
+Dockerfile
+docker-compose.yml
+
+# Docs
+README.md
+DEMO_GUIDE.md
+*.md
+
+# Environment files (secrets!)
+.env
+.env.*
+!.env.example
